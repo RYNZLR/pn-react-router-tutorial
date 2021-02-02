@@ -49,3 +49,5 @@ After this step you should have:
 - React Router installed
 - Set up a folder structure you prefer
 - Used routing for the first time
+
+## Step 2 - Adding routes

@@ -1,29 +1,29 @@
 import {
     Switch,
     Route
-  } from "react-router-dom";
+} from "react-router-dom";
 
-export default  function AppRouter(){
+import {Home, About, Parameters, Queries, Error} from '../views/viewImports';
 
+
+export default function AppRouter(){
 
 return(
     <Switch>
-        <Route exact path="/">
-            <Home />
+
+        <Route exact path={["/", "/home", "/root"]} component={Home} />
+
+        <Route exact path="/about">
+            <Home/>
+            <About/>
         </Route>
 
-        <Route exact path="/*">
-            <Error />
-        </Route>
+            
+        <Route exact path="/params" component={Parameters} />
+
+        <Route exact path="/queries" component={Queries} />
+
+        <Route exact path="/*" component={Error} />
     </Switch>
 )
-}
-
-function Home() {
-    return <h2>Home</h2>;
-}
-
-
-function Error() {
-    return <h2>Error</h2>;
 }
