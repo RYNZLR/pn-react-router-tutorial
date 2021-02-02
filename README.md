@@ -17,3 +17,10 @@ cd router-tutorial # go to the root of the project
 npm start # starts the app
 ```
 
+## Step 1 - Installing the React Router package
+Now that we have a React app, we will install the React Router package. You can find more info about this package on https://www.npmjs.com/package/react-router-dom. 
+Install the package with the following command:
+```bash
+npm i react-router-dom
+```
+Make sure you execute this command in the root of your React app (for me, that's "router-tutorial" directory).
