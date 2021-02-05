@@ -1,4 +1,4 @@
-# React Router - Bare bone tutorial
+# React Router basics - Bare bone tutorial
 In this repository you will find all the code related to the React Router tutorial. For each step there is a branch available with code related to the title.
 
 ## Step 0 - Creating a React app
@@ -159,5 +159,56 @@ export default  function Home(){
 }
 ```
 
-
 ## Step 3 - Linking to pages
+
+There are multiple ways to link to another page on your site. Every method has it advantages, disadvantages en use cases. 
+
+### Programmatically
+
+This method of navigation we have already demonstrated in the useHistory hook section of this document. This method is mostly used to change the current location after completing an async method.  
+
+### Link
+
+This component creates accessible navigation for your site. 
+
+#### To
+
+With the "to" attribute you can link to another page on your site. This can be done via a string,  an object or a function. In this tutorial, we've been navigating via a string. Navigation using a object looks like this:
+
+```react
+ <Link to= {{
+	pathname: "/queries",
+	search: "?name=Lisa&age=20",  /* query string you want to pass */
+	hash: "#hash",  /* link to an id on the /queryies page */
+}}>Object Link: Queries</Link>
+```
+
+It's also possible to use a function. This method isn't used that much, but also works:
+
+```react
+<Link to={location => ({...location, pathname: "/about"})}>Function Link: about</Link>
+```
+
+#### Replace
+
+If you don't want a page to show up in the browser history of a user, you can use the "replace" attribute.
+
+```react
+<Link to="/users" replace>Replace history entry</Link>
+```
+
+### NavLink
+
+This component is a special version of the Link-component. It mostly used to create navigation bars.
+
+#### activeClassName and activeStyle
+
+These attributes are used to style the link if the link matches the current route. With activeClassName you can pass a class name that needs to be added to the link. If you don't want to use a class, you can use activeStyle, in which you define the styling rules for the component.
+
+```react
+<NavLink to="/" activeClassName="active">Current page: activeClassName</NavLink>
+<NavLink to="/" activeStyle={{ fontWeight: "bold", color: "#00ffbb" }}>Current page: activeStyle</NavLink>
+```
+
+
+
